@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contacts</h1>
+
+<div id="admin_contacts">
+  <% @admin_contacts.each do |admin_contact| %>
+    <%= render 'admin_contact', admin_contact: admin_contact %>
+    <p>
+    <%= link_to "Show", admin_contact_path(admin_contact) %>
+    <%= link_to "Edit", edit_admin_contact_path(admin_contact) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New contact", new_admin_contact_path %>
