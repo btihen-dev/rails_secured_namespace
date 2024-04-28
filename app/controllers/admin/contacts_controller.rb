@@ -1,25 +1,20 @@
-class Admin::ContactsController < ApplicationController
+class Admin::ContactsController <  Admin::ApplicationController
   before_action :set_admin_contact, only: %i[ show edit update destroy ]
 
-  # GET /admin/contacts or /admin/contacts.json
   def index
     @admin_contacts = Contact.all
   end
 
-  # GET /admin/contacts/1 or /admin/contacts/1.json
   def show
   end
 
-  # GET /admin/contacts/new
   def new
     @admin_contact = Contact.new
   end
 
-  # GET /admin/contacts/1/edit
   def edit
   end
 
-  # POST /admin/contacts or /admin/contacts.json
   def create
     @admin_contact = Contact.new(admin_contact_params)
 
@@ -34,7 +29,6 @@ class Admin::ContactsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /admin/contacts/1 or /admin/contacts/1.json
   def update
     respond_to do |format|
       if @admin_contact.update(admin_contact_params)
@@ -47,7 +41,6 @@ class Admin::ContactsController < ApplicationController
     end
   end
 
-  # DELETE /admin/contacts/1 or /admin/contacts/1.json
   def destroy
     @admin_contact.destroy!
 
