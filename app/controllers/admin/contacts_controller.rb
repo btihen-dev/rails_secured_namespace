@@ -59,6 +59,7 @@ class Admin::ContactsController <  Admin::ApplicationController
 
   # Only allow a list of trusted parameters through.
   def admin_contact_params
-    params.fetch(:admin_contact, {})
+    # params.fetch(:admin_contact, {})
+    params.require(:contact).permit(:email, :first_name, :last_name, :message)
   end
 end

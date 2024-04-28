@@ -1,0 +1,24 @@
+<div id="<%= dom_id admin_user %>">
+
+  <p>
+    <strong>Disable:</strong>
+    <%# admin_user.email %>
+  </p>
+
+  <p>
+    <strong>Reset Password:</strong>
+    <%# admin_user.email %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= admin_user.email %>
+  </p>
+
+  <p>
+    <strong>Roles:</strong>
+    <%= admin_user.roles.sort.join(', ') %>
+    <%# admin_user.roles.reject(&:blank?).sort.join(', ') %>
+  </p>
+
+</div>
